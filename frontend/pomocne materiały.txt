@@ -1,0 +1,3 @@
+https://material.angular.io/guide/schematics#navigation-schematic -> schamety do automatycznej generacji
+
+https://stackoverflow.com/questions/60260534/how-to-add-filter-row-inside-material-table -> dodanie filtra w headerze w tablicy a konkretnie link https://stackblitz.com/edit/angular-hbakxo-5jeaic
