@@ -8,10 +8,8 @@ const routes: Routes = [
   {
     path: 'nav', component: NavigationComponent,
     children: [
-      {
-        path: 'welcome',
-        component: WelcomeComponent, 
-      },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: '/nav/welcome', pathMatch: 'full' },
     ],
   },
   { path: '', component: LoginComponent },
