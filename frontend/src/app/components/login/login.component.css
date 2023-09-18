@@ -1,6 +1,15 @@
 .continer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+
     align-items: center;
-    align-content: center;
+    align-content: space-between;
+    height: 100vh;
 }
+.login-button {
+    width: 250px;
+    height: 80px;
+    font-size: xx-large;
+}
+  
