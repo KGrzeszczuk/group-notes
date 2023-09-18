@@ -17,5 +17,5 @@
 
 .sidenav-content .mat-toolbar{
   position: fixed;
-  z-index: 2;
+  z-index: 1000;
 }
