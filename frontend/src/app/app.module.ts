@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ExamplePageComponent } from './components/example-page/example-page.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -18,7 +18,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { SimpleTableComponent } from './components/simple-table/simple-table.component';
+import { ExampleTableComponent } from './components/example-table/example-table.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 
@@ -26,9 +26,9 @@ import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
+    ExamplePageComponent,
     NavigationComponent,
-    SimpleTableComponent,
+    ExampleTableComponent,
     HeaderComponent,
     LoginComponent
   ],

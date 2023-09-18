@@ -7,3 +7,5 @@ https://material.angular.io/components/table/examples#table-http -> pobieranie d
 https://fonts.google.com/icons -> icony
 
 https://angular.io/guide/http-security-xsrf-protection
+
+https://github.com/typicode/json-server

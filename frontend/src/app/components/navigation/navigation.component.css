@@ -10,11 +10,11 @@
   background: inherit;
 }
 
-.sidenav-content .mat-toolbar{
+/* .sidenav-content .mat-toolbar{
   position: fixed;
   z-index: 1000;
-}
+} */
 
-.sidenav-main-content {
+/* .sidenav-main-content {
   margin-top: 64px;
-}
+} */
