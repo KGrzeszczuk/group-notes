@@ -19,13 +19,16 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SimpleTableComponent } from './components/simple-table/simple-table.component';
+import { HeaderComponent } from './components/header/header.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     NavigationComponent,
-    SimpleTableComponent
+    SimpleTableComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

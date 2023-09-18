@@ -1,3 +1,7 @@
 https://material.angular.io/guide/schematics#navigation-schematic -> schamety do automatycznej generacji
 
 https://stackoverflow.com/questions/60260534/how-to-add-filter-row-inside-material-table -> dodanie filtra w headerze w tablicy a konkretnie link https://stackblitz.com/edit/angular-hbakxo-5jeaic
+
+https://material.angular.io/components/table/examples#table-http -> pobieranie danych z http do tablicy
+
+https://fonts.google.com/icons -> icony
