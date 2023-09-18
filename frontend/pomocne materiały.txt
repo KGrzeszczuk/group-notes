@@ -5,3 +5,5 @@ https://stackoverflow.com/questions/60260534/how-to-add-filter-row-inside-materi
 https://material.angular.io/components/table/examples#table-http -> pobieranie danych z http do tablicy
 
 https://fonts.google.com/icons -> icony
+
+https://angular.io/guide/http-security-xsrf-protection

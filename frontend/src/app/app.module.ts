@@ -20,6 +20,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SimpleTableComponent } from './components/simple-table/simple-table.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { HeaderComponent } from './components/header/header.component';
     WelcomeComponent,
     NavigationComponent,
     SimpleTableComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
