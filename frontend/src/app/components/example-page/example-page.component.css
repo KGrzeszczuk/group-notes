@@ -1,13 +1,19 @@
-.welcome-continer {
+.continer {
     display: flex;
     flex-direction: column;
+    margin: 10px 20px;
 }
 
-.welcome-continer *{
-    margin: 10px 30px;
+.continer>* {
+    margin: 10px;
 }
 
 .title {
     display: flex;
     align-items: center;
+    justify-content: start;
+}
+
+.title>* {
+    margin: 10px;
 }

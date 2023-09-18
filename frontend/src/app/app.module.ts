@@ -17,7 +17,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { NavigationComponent } from './components/navigation/navigation.component';
+import { MainPageNavComponent } from './components/main-page-nav/main-page-nav.component';
 import { ExampleTableComponent } from './components/example-table/example-table.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
@@ -27,7 +27,7 @@ import { LoginComponent } from './components/login/login.component';
   declarations: [
     AppComponent,
     ExamplePageComponent,
-    NavigationComponent,
+    MainPageNavComponent,
     ExampleTableComponent,
     HeaderComponent,
     LoginComponent
