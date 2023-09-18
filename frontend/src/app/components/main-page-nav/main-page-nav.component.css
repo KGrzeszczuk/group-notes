@@ -1,20 +1,14 @@
-.container {
-  height: 100%;
+.toolbar-header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  height: 64px !important;
 }
 
-.sidenav {
+mat-sidenav {
   width: 200px;
 }
 
-.sidenav .mat-toolbar {
+mat-sidenav mat-toolbar {
   background: inherit;
 }
-
-/* .content .mat-toolbar{
-  position: fixed;
-  z-index: 1000;
-} */
-
-/* .sidenav-main-content {
-  margin-top: 64px;
-} */

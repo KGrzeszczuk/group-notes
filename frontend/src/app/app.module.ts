@@ -21,7 +21,7 @@ import { MainPageNavComponent } from './components/main-page-nav/main-page-nav.c
 import { ExampleTableComponent } from './components/example-table/example-table.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { GroupsComponent } from './components/groups/groups.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { LoginComponent } from './components/login/login.component';
     MainPageNavComponent,
     ExampleTableComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    GroupsComponent
   ],
   imports: [
     BrowserModule,
