@@ -1,13 +1,3 @@
-.continer {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 20px;
-}
-
-.continer>* {
-    margin: 10px;
-}
-
 .title {
     display: flex;
     align-items: center;

@@ -1,3 +1,13 @@
-p{
-    /* height: 200vh; */
+th {
+    border-bottom: 1px solid;
+}
+
+th:not(:last-child),
+td:not(:last-child){
+    border-right: 1px solid;
+}
+
+.mat-column-id {
+    width: 32px;
+    text-align: center;
 }

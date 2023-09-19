@@ -27,3 +27,13 @@ body {
     border-radius: 30px;
     background-color: #a9a9a9;
 }
+
+.page-content-continer {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+}
+
+.page-content-continer>* {
+    margin: 10px;
+}

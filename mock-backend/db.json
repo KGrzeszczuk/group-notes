@@ -2,7 +2,25 @@
   "groups": [
     { "id": 1, "name": "Grupa 1", "description": "opsi jakis grupy" },
     { "id": 2, "name": "grupa 2", "description": "" },
-    { "id": 3, "name": "nawa json grupa 3", "description": "costam" }
+    { "id": 3, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 4, "name": "nawa json grupa 4", "description": "costam" },
+    { "id": 5, "name": "nawa json grupa 5", "description": "costam" },
+    { "id": 6, "name": "nawa json grupa 6", "description": "costam" },
+    { "id": 7, "name": "nawa json grupa 7", "description": "costam" },
+    { "id": 8, "name": "nawa json grupa 8", "description": "costam" },
+    { "id": 9, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 10, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 11, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 12, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 13, "name": "nawa json grupa 3dc", "description": "costam" },
+    { "id": 14, "name": "nawa json grupa 3a", "description": "costam" },
+    { "id": 15, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 16, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 17, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 18, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 19, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 20, "name": "nawa json grupa 3", "description": "costam" },
+    { "id": 21, "name": "nawa json grupa 3xxx", "description": "costam" }
   ],
   "notes": [
     { "id": 1, "title": "notatka slurzbowa", "description": "koknret notatki", "readed": "true",  "groupId": 1 },
