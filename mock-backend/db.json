@@ -23,9 +23,9 @@
     { "id": 21, "name": "nawa json grupa 3xxx", "description": "costam" }
   ],
   "notes": [
-    { "id": 1, "title": "notatka slurzbowa", "description": "koknret notatki", "readed": "true",  "groupId": 1 },
+    { "id": 1, "title": "notatka służbowa", "description": "koknret notatki", "readed": "true",  "groupId": 1 },
     { "id": 2, "title": "zakupy", "description": "inny desc", "readed": "true",  "groupId": 1 },
-    { "id": 3, "title": "nicckiewago", "description": "", "readed": "false",  "groupId": 1 },
+    { "id": 3, "title": "nicckiewago ", "description": "", "readed": "false",  "groupId": 1 },
     { "id": 4, "title": "some comment4", "description": "koknret notatki", "readed": "true",  "groupId": 2 },
     { "id": 5, "title": "some comment5", "description": "koknret notatki", "readed": "true",  "groupId": 2 },
     { "id": 6, "title": "some comment", "description": "koknret notatki", "readed": "false",  "groupId": 3 }

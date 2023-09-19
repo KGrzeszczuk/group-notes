@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <div *ngIf="group">
+        <span>Nazwa grupy: {{group.name}}</span>
+    </div>
+</mat-toolbar>
+
+<div *ngIf="group" class="page-content-continer">
+    <mat-tab-group backgroundColor="primary">
+        <mat-tab label="Notatki"><app-group-notes [group]="group"></app-group-notes></mat-tab>
+        <mat-tab label="Szczegóły grupy"><app-group-details [group]="group"></app-group-details></mat-tab>
+    </mat-tab-group>
+</div>

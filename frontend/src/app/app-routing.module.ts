@@ -4,6 +4,7 @@ import { ExamplePageComponent } from './components/example-page/example-page.com
 import { LoginComponent } from './components/login/login.component';
 import { MainPageNavComponent } from './components/main-page-nav/main-page-nav.component';
 import { GroupsComponent } from './components/groups/groups.component';
+import { GroupComponent } from './components/group/group.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     children: [
       { path: 'example', component: ExamplePageComponent },
       { path: 'groups', component: GroupsComponent },
+      { path: 'group/:id', component: GroupComponent },
       { path: '', redirectTo: '/nav/example', pathMatch: 'full' },
     ],
   },

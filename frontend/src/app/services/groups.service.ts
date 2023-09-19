@@ -7,6 +7,15 @@ export interface Group {
   id: number;
   name: string;
   description: string;
+  notes: Note[];
+}
+
+export interface Note {
+  id: number;
+  title: string;
+  description: string;
+  readed: boolean;
+  groupId: number;
 }
 
 export interface GroupsApi {
@@ -18,16 +27,16 @@ export interface GroupsApi {
   providedIn: 'root'
 })
 export class GroupsService {
+  href:string = 'http://localhost:5000/groups';
 
   constructor(private http: HttpClient) { }
 
   getGroupItems(sort: string, order: SortDirection, pageSize: Number, page: number): Observable<GroupsApi> {
-    const href = 'http://localhost:5000';
     let orderUrl = "";
-    if(order !== "" && sort !== null ){
+    if (order !== "" && sort !== null) {
       orderUrl = `&_sort=${sort}&_order=${order}`
     }
-    const requestUrl = `${href}/groups?_page=${page + 1}&_limit=${pageSize}${orderUrl}`;
+    const requestUrl = `${this.href}?_page=${page + 1}&_limit=${pageSize}${orderUrl}&_embed=notes`;
 
     return this.http.get<Group[]>(requestUrl, { observe: 'response' }).pipe(
       map(
@@ -37,5 +46,10 @@ export class GroupsService {
             totalCount: Number(data.headers.get('X-Total-Count'))
           };
         }));
+  }
+
+  getGroup(groupId: number): Observable<Group> {
+    const requestUrl = `${this.href}/${groupId}?_embed=notes`;
+    return this.http.get<Group>(requestUrl);
   }
 }

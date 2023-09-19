@@ -11,3 +11,12 @@ td:not(:last-child){
     width: 32px;
     text-align: center;
 }
+
+.mat-column-name {
+    width: 20%;
+}
+
+.mat-column-actions {
+    width: 10em;
+    text-align: center;
+}

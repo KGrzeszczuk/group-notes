@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser'; 
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,11 @@ import { ExampleTableComponent } from './components/example-table/example-table.
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { GroupsComponent } from './components/groups/groups.component';
+import { GroupComponent } from './components/group/group.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { GroupDetailsComponent } from './components/group-details/group-details.component';
+import { GroupNotesComponent } from './components/group-notes/group-notes.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,10 @@ import { GroupsComponent } from './components/groups/groups.component';
     ExampleTableComponent,
     HeaderComponent,
     LoginComponent,
-    GroupsComponent
+    GroupsComponent,
+    GroupComponent,
+    GroupDetailsComponent,
+    GroupNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,9 @@ import { GroupsComponent } from './components/groups/groups.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

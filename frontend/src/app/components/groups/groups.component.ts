@@ -14,19 +14,19 @@ export class GroupsComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  exampleDatabase!: GroupsService | null;
+  groupService!: GroupsService | null;
   data!: Group[];
 
   resultsLength = 0;
   isLoadingResults = true;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'name', 'description', 'actions'];
 
   constructor(private http: HttpClient) { }
 
   ngAfterViewInit(): void {
-    this.exampleDatabase = new GroupsService(this.http);
+    this.groupService = new GroupsService(this.http);
 
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
 
@@ -35,7 +35,7 @@ export class GroupsComponent {
         startWith({}),
         switchMap(() => {
           this.isLoadingResults = true;
-          return this.exampleDatabase!.getGroupItems(
+          return this.groupService!.getGroupItems(
             this.sort.active,
             this.sort.direction,
             this.paginator.pageSize,
