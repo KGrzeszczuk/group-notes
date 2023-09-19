@@ -15,3 +15,7 @@ mat-card {
 .note-description {
   margin: 10px;
 }
+
+.page-content-continer {
+  margin-top: 0px;
+}
