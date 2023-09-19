@@ -1,38 +1,184 @@
 {
   "groups": [
-    { "id": 1, "name": "Grupa 1", "description": "opsi jakis grupy" },
-    { "id": 2, "name": "grupa 2", "description": "" },
-    { "id": 3, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 4, "name": "nawa json grupa 4", "description": "costam" },
-    { "id": 5, "name": "nawa json grupa 5", "description": "costam" },
-    { "id": 6, "name": "nawa json grupa 6", "description": "costam" },
-    { "id": 7, "name": "nawa json grupa 7", "description": "costam" },
-    { "id": 8, "name": "nawa json grupa 8", "description": "costam" },
-    { "id": 9, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 10, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 11, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 12, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 13, "name": "nawa json grupa 3dc", "description": "costam" },
-    { "id": 14, "name": "nawa json grupa 3a", "description": "costam" },
-    { "id": 15, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 16, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 17, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 18, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 19, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 20, "name": "nawa json grupa 3", "description": "costam" },
-    { "id": 21, "name": "nawa json grupa 3xxx", "description": "costam" }
+    {
+      "id": 1,
+      "name": "Grupa 1",
+      "description": "opsi jakis grupy"
+    },
+    {
+      "id": 2,
+      "name": "grupa 2",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 4,
+      "name": "nawa json grupa 4",
+      "description": "costam"
+    },
+    {
+      "id": 5,
+      "name": "nawa json grupa 5",
+      "description": "costam"
+    },
+    {
+      "id": 6,
+      "name": "nawa json grupa 6",
+      "description": "costam"
+    },
+    {
+      "id": 7,
+      "name": "nawa json grupa 7",
+      "description": "costam"
+    },
+    {
+      "id": 8,
+      "name": "nawa json grupa 8",
+      "description": "costam"
+    },
+    {
+      "id": 9,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 10,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 11,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 12,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 13,
+      "name": "nawa json grupa 3dc",
+      "description": "costam"
+    },
+    {
+      "id": 14,
+      "name": "nawa json grupa 3a",
+      "description": "costam"
+    },
+    {
+      "id": 15,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 16,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 17,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 18,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 19,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 20,
+      "name": "nawa json grupa 3",
+      "description": "costam"
+    },
+    {
+      "id": 21,
+      "name": "nawa json grupa 3xxx",
+      "description": "costam"
+    }
   ],
   "notes": [
-    { "id": 1, "title": "notatka służbowa", "description": "koknret notatki", "readed": "true",  "groupId": 1 },
-    { "id": 2, "title": "zakupy", "description": "inny desc", "readed": "true",  "groupId": 1 },
-    { "id": 3, "title": "nicckiewago ", "description": "", "readed": "false",  "groupId": 1 },
-    { "id": 4, "title": "some comment4", "description": "koknret notatki", "readed": "true",  "groupId": 2 },
-    { "id": 5, "title": "some comment5", "description": "koknret notatki", "readed": "true",  "groupId": 2 },
-    { "id": 6, "title": "some comment", "description": "koknret notatki", "readed": "false",  "groupId": 3 },
-    { "id": 7, "title": "nicckiewago ", "description": "", "readed": "false",  "groupId": 1 },
-    { "id": 8, "title": "nicckiewago ", "description": "", "readed": "false",  "groupId": 1 },
-    { "id": 9, "title": "nicckiewago ", "description": "", "readed": "false",  "groupId": 1 },
-    { "id": 10, "title": "nicckiewago ", "description": "", "readed": "false",  "groupId": 1 }
+    {
+      "id": 1,
+      "title": "notatka służbowa",
+      "description": "koknret notatki",
+      "readed": "true",
+      "groupId": 1
+    },
+    {
+      "id": 2,
+      "title": "zakupy",
+      "description": "inny desc",
+      "readed": "true",
+      "groupId": 1
+    },
+    {
+      "id": 3,
+      "title": "nicckiewago ",
+      "description": "",
+      "readed": "false",
+      "groupId": 1
+    },
+    {
+      "id": 4,
+      "title": "some comment4xx",
+      "description": "koknret notatki",
+      "readed": "true",
+      "groupId": 2
+    },
+    {
+      "id": 5,
+      "title": "some comment5",
+      "description": "koknret notatki",
+      "readed": "true",
+      "groupId": 2
+    },
+    {
+      "id": 6,
+      "title": "some comment",
+      "description": "koknret notatki",
+      "readed": "false",
+      "groupId": 3
+    },
+    {
+      "id": 7,
+      "title": "nicckiewago ",
+      "description": "",
+      "readed": "false",
+      "groupId": 1
+    },
+    {
+      "id": 8,
+      "title": "nicckiewago ",
+      "description": "",
+      "readed": "false",
+      "groupId": 1
+    },
+    {
+      "id": 9,
+      "title": "nicckiewago ",
+      "description": "",
+      "readed": "false",
+      "groupId": 1
+    },
+    {
+      "id": 10,
+      "title": "nicckiewago ",
+      "description": "",
+      "readed": "false",
+      "groupId": 1
+    }
   ],
-  "user": { "name": "typicode" }
+  "user": {
+    "name": "typicode"
+  }
 }

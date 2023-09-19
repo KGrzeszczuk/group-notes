@@ -1,4 +1,4 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SortDirection } from '@angular/material/sort';
 import { Observable, map } from 'rxjs';
@@ -27,7 +27,7 @@ export interface GroupsApi {
   providedIn: 'root'
 })
 export class GroupsService {
-  href:string = 'http://localhost:5000/groups';
+  baseUrl:string = 'http://localhost:5000/groups';
 
   constructor(private http: HttpClient) { }
 
@@ -36,7 +36,7 @@ export class GroupsService {
     if (order !== "" && sort !== null) {
       orderUrl = `&_sort=${sort}&_order=${order}`
     }
-    const requestUrl = `${this.href}?_page=${page + 1}&_limit=${pageSize}${orderUrl}&_embed=notes`;
+    const requestUrl = `${this.baseUrl}?_page=${page + 1}&_limit=${pageSize}${orderUrl}&_embed=notes`;
 
     return this.http.get<Group[]>(requestUrl, { observe: 'response' }).pipe(
       map(
@@ -49,7 +49,12 @@ export class GroupsService {
   }
 
   getGroup(groupId: number): Observable<Group> {
-    const requestUrl = `${this.href}/${groupId}?_embed=notes`;
+    const requestUrl = `${this.baseUrl}/${groupId}?_embed=notes`;
     return this.http.get<Group>(requestUrl);
+  }
+
+  updateNote(note: Note): Observable<Note>{
+    const url = `http://localhost:5000/notes/${note.id}`;
+    return this.http.put<Note>(url, note);
   }
 }
