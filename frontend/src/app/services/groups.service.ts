@@ -2,20 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SortDirection } from '@angular/material/sort';
 import { Observable, map } from 'rxjs';
+import { Note } from './notes.service';
 
 export interface Group {
   id: number;
   name: string;
   description: string;
   notes: Note[];
-}
-
-export interface Note {
-  id: number;
-  title: string;
-  description: string;
-  readed: boolean;
-  groupId: number;
 }
 
 export interface GroupsApi {
@@ -53,8 +46,4 @@ export class GroupsService {
     return this.http.get<Group>(requestUrl);
   }
 
-  updateNote(note: Note): Observable<Note>{
-    const url = `http://localhost:5000/notes/${note.id}`;
-    return this.http.put<Note>(url, note);
-  }
 }

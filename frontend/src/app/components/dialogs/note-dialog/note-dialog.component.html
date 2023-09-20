@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>{{!oldNote? 'Dodaj notatkę' : 'Edytuj notatkę'}}</h1>
+
+<div mat-dialog-content>
+    <form #dialogFrom="ngForm" (ngSubmit)="saveNote()">
+        <p>Tytuł notatki</p>
+        <mat-form-field color="accent">
+            <mat-label>Tytuł</mat-label>
+            <input name="title" matInput [(ngModel)]="note.title" required #title="ngModel">
+            <mat-error *ngIf="title.errors?.['required']">
+                Wymagany jest tytuł
+            </mat-error>
+        </mat-form-field>
+        <p>Opis notatki</p>
+        <mat-form-field color="accent">
+            <mat-label>Opis</mat-label>
+            <textarea name="description" matInput [(ngModel)]="note.description"></textarea>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Anuluj</button>
+    <button mat-button (click)="dialogFrom.ngSubmit.emit()">Zapisz</button>
+</div>

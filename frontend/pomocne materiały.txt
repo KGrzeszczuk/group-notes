@@ -9,3 +9,5 @@ https://fonts.google.com/icons -> icony
 https://angular.io/guide/http-security-xsrf-protection
 
 https://github.com/typicode/json-server
+
+https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/

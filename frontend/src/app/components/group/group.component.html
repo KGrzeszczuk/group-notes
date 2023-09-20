@@ -1,7 +1,8 @@
 <mat-toolbar color="primary">
     <div *ngIf="group">
-        <span>Nazwa grupy: {{group.name}}</span>
+        <span>Notatki w grupie: {{group.name}}</span>
     </div>
+    <button mat-mini-fab (click)="openNewNoteDialog()"><mat-icon>add</mat-icon></button>
 </mat-toolbar>
 
 <div *ngIf="group" class="page-content-continer">

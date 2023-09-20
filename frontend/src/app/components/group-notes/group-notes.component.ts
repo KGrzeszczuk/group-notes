@@ -4,8 +4,10 @@ import { Component, Input, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { Group, GroupsService, Note } from 'src/app/services/groups.service';
-import { EditNoteDialogComponent } from '../dialogs/edit-note-dialog/edit-note-dialog.component';
+import { Group } from 'src/app/services/groups.service';
+import { Note, NotesService } from 'src/app/services/notes.service';
+import { ConfirmDialogComponent, ConfirmDialogModel } from '../dialogs/confirm-dialog/confirm-dialog.component';
+import { NoteDialogComponent } from '../dialogs/note-dialog/note-dialog.component';
 
 @Component({
   selector: 'app-group-notes',
@@ -15,7 +17,7 @@ import { EditNoteDialogComponent } from '../dialogs/edit-note-dialog/edit-note-d
 export class GroupNotesComponent {
   @Input() group!: Group;
 
-  groupService!: GroupsService;
+  notesService!: NotesService;
   breakpointObserver = inject(BreakpointObserver);
 
   columnNumber$: Observable<number> = this.breakpointObserver.observe([Breakpoints.Medium, Breakpoints.Small, Breakpoints.XSmall])
@@ -30,19 +32,40 @@ export class GroupNotesComponent {
       shareReplay()
     );
 
-  constructor(private http: HttpClient, public dialog: MatDialog) {
-    this.groupService = new GroupsService(this.http);
-   }
+  constructor(private http: HttpClient, private dialog: MatDialog) { }
 
-  openEditNote(note: Note) {
-    const dialogRef = 
-    this.dialog.open(EditNoteDialogComponent, {
-      data: note,
+  ngOnInit(): void {
+    this.notesService = new NotesService(this.http);
+  }
+
+  openEditNoteDialog(note: Note) {
+    const dialogRef =
+      this.dialog.open(NoteDialogComponent, {
+        data: note,
+      });
+
+    dialogRef.afterClosed().subscribe(updatedNote => {
+      if (!updatedNote) return;
+      this.notesService.updateNote(updatedNote).subscribe(result => Object.assign(note, result));
+    });
+  }
+
+  deleteNote(note: Note) {
+    const title = `Potwierdź`;
+    const message = `Jesteś pewien usunięcia notatki?`;
+
+    const dialogData = new ConfirmDialogModel(title, message);
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      maxWidth: "400px",
+      data: dialogData
     });
 
-    dialogRef.afterClosed().subscribe(newNote => {
-      if(!newNote) return;
-      this.groupService.updateNote(newNote).subscribe(result => Object.assign(note, result));
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      this.notesService.deleteNote(note).subscribe(() => {
+        this.group.notes = this.group.notes.filter(d => d.id != note.id)
+      });
+
     });
   }
 }

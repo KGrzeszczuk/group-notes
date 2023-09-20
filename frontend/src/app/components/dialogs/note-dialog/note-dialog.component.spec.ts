@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditNoteDialogComponent } from './edit-note-dialog.component';
+import { NoteDialogComponent } from './note-dialog.component';
 
 describe('EditNoteDialogComponent', () => {
-  let component: EditNoteDialogComponent;
-  let fixture: ComponentFixture<EditNoteDialogComponent>;
+  let component: NoteDialogComponent;
+  let fixture: ComponentFixture<NoteDialogComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EditNoteDialogComponent]
+      declarations: [NoteDialogComponent]
     });
-    fixture = TestBed.createComponent(EditNoteDialogComponent);
+    fixture = TestBed.createComponent(NoteDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

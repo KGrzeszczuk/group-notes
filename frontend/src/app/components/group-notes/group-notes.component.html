@@ -1,6 +1,6 @@
 <div class="page-content-continer mat-elevation-z8">
   <ng-container *ngIf="group.notes.length == 0; else elseTemplate">
-      <span>Brak notatek</span>
+    <span>Brak notatek</span>
   </ng-container>
   <ng-template #elseTemplate>
     <mat-grid-list [cols]="(columnNumber$ | async)" rowHeight="350px">
@@ -8,15 +8,15 @@
         <mat-card>
           <mat-card-header>
             <div mat-card-avatar><mat-icon>description</mat-icon></div>
-            <mat-card-title >{{ note.title }}</mat-card-title>
+            <mat-card-title>{{ note.title }}</mat-card-title>
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item (click)="openEditNote(note)">Edytuj</button>
-              <button mat-menu-item>Usuń</button>
-            </mat-menu>       
-          </mat-card-header>        
+              <button mat-menu-item (click)="openEditNoteDialog(note)">Edytuj</button>
+              <button mat-menu-item (click)="deleteNote(note)">Usuń</button>
+            </mat-menu>
+          </mat-card-header>
           <mat-card-content>
             <mat-divider></mat-divider>
             <div class="mat-body note-description">{{ note.description }}</div>
