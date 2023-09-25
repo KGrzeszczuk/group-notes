@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GroupsService } from './groups.service';
+import { AppSessionService } from './app-session-service.service';
 
-describe('GroupsService', () => {
-  let service: GroupsService;
+describe('AppSessionService', () => {
+  let service: AppSessionService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(GroupsService);
+    service = TestBed.inject(AppSessionService);
   });
 
   it('should be created', () => {

@@ -22,6 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog/confirm-dialog.component';
 import { NoteDialogComponent } from './components/dialogs/note-dialog/note-dialog.component';
 import { ExamplePageComponent } from './components/example-page/example-page.component';
 import { ExampleTableComponent } from './components/example-table/example-table.component';
@@ -33,7 +34,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainPageNavComponent } from './components/main-page-nav/main-page-nav.component';
 import { MaterialModule } from './material/material.module';
-import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog/confirm-dialog.component';
+import { AppSessionService } from './services/app-session-service.service';
 
 
 @NgModule({
@@ -75,7 +76,7 @@ import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog/conf
     MatDialogModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AppSessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

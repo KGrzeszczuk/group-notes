@@ -1,4 +1,35 @@
 <div class="continer">
         <div class="mat-headline-1" >Logowanie</div>
-    <button class="login-button" color="primary" mat-raised-button [routerLink]="['/nav/example']">Login</button>
+		<button class="login-button" color="primary" mat-raised-button [routerLink]="['/nav/example']">Login (tylko routerlink)</button>
+
+		
+		<div class="mat-headline-4" [hidden]="!authenticated()">
+			<p>Zalogowany</p>
+		</div>
+		<div class="mat-headline-4" [hidden]="authenticated()">
+			<p>Nie zalogowany</p>
+		</div>
+
+		<form role="form" (submit)="login()">
+			<div class="form-group">
+				<label for="username">Login:</label> <input type="text"
+					class="form-control" id="username" name="username" [(ngModel)]="credentials.username"/>
+			</div>
+			<div class="form-group">
+				<label for="password">Hasło:</label> <input type="password"
+					class="form-control" id="password" name="password" [(ngModel)]="credentials.password"/>
+			</div>
+			<button mat-raised-button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		<p>{{odpowedz1}}</p>
+		<button color="primary" mat-raised-button (click)="pobierzDane1()">pobierz dane1</button>
+		<p>{{odpowedz2}}</p>
+		<button color="primary" mat-raised-button (click)="pobierzDane2()">pobierz dane2</button>
+
+    
 </div>
+
+
+
+
+
