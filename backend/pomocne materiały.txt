@@ -1,0 +1,3 @@
+https://www.baeldung.com/spring-session-jdbc
+
+http://localhost:8080/h2-console // dbc:h2:mem:testdb   sa/""
