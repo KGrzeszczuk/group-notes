@@ -1,53 +1,42 @@
 package pl.kamil.backend.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+import java.util.Map;
 
-import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import pl.kamil.backend.dto.LoginDto;
 
 @RestController
 public class SpringSessionJdbcController {
 
-    @GetMapping("/")
-    public String index(Model model, HttpSession session) {
-        List<String> favoriteColors = getFavColors(session);
-        model.addAttribute("favoriteColors", favoriteColors);
-        model.addAttribute("sessionId", session.getId());
-        return "index";
+    @Autowired
+    UserDetailsService userDetailsService;
+
+    @Autowired
+    AuthenticationManager authenticationManager;
+
+    @PostMapping("/public/login")
+    public Map<String, String> login(HttpSession session, @RequestBody LoginDto loginDto) {
+        System.out.println("start");
+        Authentication authentication = authenticationManager
+                .authenticate(new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword()));
+        System.out.println("end");
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        securityContext.setAuthentication(authentication);
+        session.setAttribute("SPRING_SECURITY_CONTEXT", securityContext);
+
+        return Collections.singletonMap("message", "User signed-in successfully!.");
     }
 
-    @PostMapping("/saveColor")
-    public String saveMessage(@RequestParam("color") String color,
-            HttpServletRequest request) {
-            System.out.print("Test1");
-
-        List<String> favoriteColors = getFavColors(request.getSession());
-        if (StringUtils.hasLength(color)) {
-            favoriteColors.add(color);
-                        System.out.print("2");
-
-            System.out.print(favoriteColors);
-            request.getSession().setAttribute("favoriteColors", favoriteColors);
-        }
-        return "redirect:/";
-    }
-
-    @SuppressWarnings(value = "unchecked")
-    private List<String> getFavColors(HttpSession session) {
-        List<String> favoriteColors = (List<String>) session
-                .getAttribute("favoriteColors");
-
-        if (favoriteColors == null) {
-            favoriteColors = new ArrayList<>();
-        }
-        return favoriteColors;
-    }
 }

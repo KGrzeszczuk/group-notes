@@ -36,6 +36,8 @@ import { MainPageNavComponent } from './components/main-page-nav/main-page-nav.c
 import { MaterialModule } from './material/material.module';
 import { AppSessionService } from './services/app-session-service.service';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,11 @@ import { AppSessionService } from './services/app-session-service.service';
     MatDialogModule,
     FormsModule
   ],
-  providers: [AppSessionService],
+  providers: [AppSessionService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
