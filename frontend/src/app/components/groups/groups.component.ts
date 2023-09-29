@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { catchError, map, merge, of, startWith, switchMap } from 'rxjs';
+import { map, merge, startWith, switchMap } from 'rxjs';
+import { TableDataDto } from 'src/app/dto/table-data-dto';
 import { Group, GroupsService } from 'src/app/services/groups.service';
 
 @Component({
@@ -35,12 +36,14 @@ export class GroupsComponent {
         startWith({}),
         switchMap(() => {
           this.isLoadingResults = true;
-          return this.groupService!.getGroupItems(
-            this.sort.active,
-            this.sort.direction,
-            this.paginator.pageSize,
-            this.paginator.pageIndex,
-          ).pipe(catchError(() => of(null)));
+
+          let tableDataDto =  new TableDataDto();
+          tableDataDto.page = this.paginator.pageIndex.toString();
+          tableDataDto.pageSize = this.paginator.pageSize.toString();
+          tableDataDto.direction = this.sort.direction;
+          tableDataDto.sortHeader = this.sort.active;
+
+          return this.groupService!.getGroupItems(tableDataDto);
         }),
         map(data => {
           // Flip flag to show that loading has finished.
@@ -51,8 +54,7 @@ export class GroupsComponent {
               groups: [],
               totalCount: 0
             };
-          }
-
+          }          
           // Only refresh the result length if there is new data. In case of rate
           // limit errors, we do not want to reset the paginator to zero, as that
           // would prevent users from re-triggering requests.

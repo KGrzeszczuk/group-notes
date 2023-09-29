@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { AppSessionService } from 'src/app/services/app-session-service.service';
+import { AppSessionService } from 'src/app/services/app-session.service';
 
 @Component({
   selector: 'app-login',
@@ -14,19 +15,19 @@ export class LoginComponent {
 
   credentials = { username: '', password: '' };
 
-  constructor(private app: AppSessionService, private http: HttpClient, private router: Router) {
-    this.app.authenticate(undefined, undefined);
+  constructor(private app: AppSessionService, private http: HttpClient, private router: Router, private _snackBar: MatSnackBar, private zone: NgZone) {
+    // this.app.authenticate(undefined, undefined);
   }
 
   authenticated() { return this.app.authenticated; }
 
   login() {
+    this.app.authenticated = true;
     this.http.post("http://localhost:8080/public/login", this.credentials).subscribe({
       next: data => {
         console.log("data")
         console.log(data)
-      },
-      error: e => console.log(e)
+      }
     })
   }
 
@@ -49,13 +50,18 @@ export class LoginComponent {
   }
 
   pobierzDane2() {
-    this.http.get<string>('http://localhost:8080/private/token').pipe(error => { console.log(error); return error }).subscribe({
+    this.http.get<string>('http://localhost:8080/private/token').subscribe({
       next: data => {
         this.odpowedz2 = data
         console.log("data")
         console.log(data)
-      },
-      error: e => console.log(e)
+      }
+      ,
+      error: e => {
+        console.log("zpaanay")
+        console.log(e)
+        throw e
+      }
     })
   }
 }

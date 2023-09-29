@@ -41,7 +41,7 @@ public class SecurityConfig {
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:4200")
                         .allowCredentials(true)
-                        .exposedHeaders("*");
+                        .exposedHeaders("X-Total-Count");
             }
         };
     }

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AppSessionService } from './app-session-service.service';
+import { AppSessionService } from './app-session.service';
 
 describe('AppSessionService', () => {
   let service: AppSessionService;
