@@ -1,3 +1,6 @@
+insert into app_user (id, username, password) values(2000, 'user', '{bcrypt}$2a$10$8jDCEY/HXu5Li8FopoIDjOuiWacqWf5/R29pj0.8pAFW/S3EsbvTG');
+insert into app_user (id, username, password) values(2001, 'admin', '{bcrypt}$2a$10$8jDCEY/HXu5Li8FopoIDjOuiWacqWf5/R29pj0.8pAFW/S3EsbvTG');
+
 insert into group_note values(1, 'The Tartar Steppe', 'description1');
 insert into group_note values(2, 'Poem Strip', 'description2');
 insert into group_note values(3,'Restless Nights: Selected Stories of Dino Buzzati','description3');
